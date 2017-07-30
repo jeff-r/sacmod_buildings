@@ -18,7 +18,7 @@ namespace :starting_data do
       gsv    = row[11]
       key    = row[12]
 
-      building = Building.create(
+      Building.create(
         architect: Architect.find_or_create_by(name: architect),
         apn: apn,
         year: year,
@@ -33,7 +33,8 @@ namespace :starting_data do
         gsv: gsv,
         key: key
       )
-      p building
+      $stdout.write(".")
+      $stdout.flush
     end
   end
 end

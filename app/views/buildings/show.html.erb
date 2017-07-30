@@ -65,7 +65,13 @@
   <%= @building.key %>
 </p>
 
+<p>
+<%= link_to 'Add photo', new_image_path %>
+</p>
+
+<p>
 <%= link_to 'Edit building', edit_building_path(@building) %>
+</p>
 
 <p>
 <%= link_to "Back to #{@building.architect.name}", @building.architect %>
