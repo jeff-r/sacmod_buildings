@@ -11,4 +11,5 @@
 </p>
 
 <%= link_to 'Edit', edit_architect_path(@architect) %> |
-<%= link_to 'Back', architects_path %>
+<%= link_to 'Back', architects_path %> |
+<%= link_to 'Destroy', @architect, method: :delete, data: { confirm: 'Are you sure?' } %>
