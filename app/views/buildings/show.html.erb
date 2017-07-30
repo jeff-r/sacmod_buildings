@@ -1,39 +1,71 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Architect:</strong>
-  <%= @building.architect.name %>
-</p>
+<div class='row'>
+  <div class='building-title'>
+    <%= @building.family %>
+  </div>
+</div>
 
-<p>
-  <strong>Apn:</strong>
-  <%= @building.apn %>
-</p>
 
-<p>
-  <strong>Year:</strong>
-  <%= @building.year %>
-</p>
+<div class='row'>
+  <div class='col-sm-6'>
+    <div class='building-architect row'>
+      <div class='col-sm-10'>
+        <%= @building.architect.name %>
+      </div>
+      <div class='col-sm-2'>
+        <%= @building.year %>
+      </div>
+    </div>
+  </div>
 
-<p>
-  <strong>Address1:</strong>
-  <%= @building.address1 %>
-</p>
+  <div class='col-sm-6'>
+    <div class='row'>
+      <div class='map col-sm-12'>
+        Map goes here
+      </div>
+    </div>
+    <div class='row'>
+      <div class='building-details'>
+        <div class='row'>
+          <div class='col-sm-6'>
+            <%= @building.year %>
+          </div>
+          <div class='col-sm-6'>
+            <%= @building.status %>
+          </div>
+        </div>
 
-<p>
-  <strong>City:</strong>
-  <%= @building.city %>
-</p>
+        <div class='row'>
+          <div class='col-sm-12'>
+          <%= @building.address1 %>,
+          <%= @building.city %>,
+          <%= @building.zip %>
+        </div>
+        </div>
 
-<p>
-  <strong>Zip:</strong>
-  <%= @building.zip %>
-</p>
+        <div class='row'>
+          <div class='col-sm-12'>
+            APN: <%= @building.apn %>
+          </div>
+        </div>
 
-<p>
-  <strong>Family:</strong>
-  <%= @building.family %>
-</p>
+        <div class='row'>
+          <div class='col-sm-12'>
+          Notes: <%= @building.notes %>
+        </div>
+        </div>
+
+        <div class='row'>
+          <div class='col-sm-12'>
+          Source: <%= @building.source %>
+        </div>
+      </div>
+
+    </div>
+    </div>
+  </div>
+</div>
 
 <p>
   <strong>Type:</strong>
@@ -41,28 +73,8 @@
 </p>
 
 <p>
-  <strong>Status:</strong>
-  <%= @building.status %>
-</p>
-
-<p>
-  <strong>Source:</strong>
-  <%= @building.source %>
-</p>
-
-<p>
-  <strong>Notes:</strong>
-  <%= @building.notes %>
-</p>
-
-<p>
   <strong>Google street view:</strong>
   <%= gsv_or_link @building.gsv %>
-</p>
-
-<p>
-  <strong>Key:</strong>
-  <%= @building.key %>
 </p>
 
 <ul>

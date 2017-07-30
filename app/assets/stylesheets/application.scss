@@ -1,1 +1,26 @@
 @import "bootstrap";
+
+.building-title {
+  color: #2799bf;
+  font-size: 2em;
+  font-family: serif;
+}
+
+.building-architect {
+  color: #2799bf;
+  font-family: serif;
+  margin-bottom: 0.5em;
+}
+
+.building-details {
+  border: 1px solid red;
+}
+
+.map {
+  height: 200px;
+  border: 1px solid #eee;
+  background-color: #eee;
+}
+
+.building-details .row {
+}
