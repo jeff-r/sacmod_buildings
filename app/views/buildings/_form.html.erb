@@ -1,0 +1,82 @@
+<%= form_with(model: building, local: true) do |form| %>
+  <% if building.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(building.errors.count, "error") %> prohibited this building from being saved:</h2>
+
+      <ul>
+      <% building.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :architect_id %>
+    <%= form.number_field :architect_id, id: :building_architect_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :apn %>
+    <%= form.text_field :apn, id: :building_apn %>
+  </div>
+
+  <div class="field">
+    <%= form.label :year %>
+    <%= form.text_field :year, id: :building_year %>
+  </div>
+
+  <div class="field">
+    <%= form.label :address1 %>
+    <%= form.text_field :address1, id: :building_address1 %>
+  </div>
+
+  <div class="field">
+    <%= form.label :city %>
+    <%= form.text_field :city, id: :building_city %>
+  </div>
+
+  <div class="field">
+    <%= form.label :zip %>
+    <%= form.text_field :zip, id: :building_zip %>
+  </div>
+
+  <div class="field">
+    <%= form.label :family %>
+    <%= form.text_field :family, id: :building_family %>
+  </div>
+
+  <div class="field">
+    <%= form.label :type %>
+    <%= form.text_field :type, id: :building_type %>
+  </div>
+
+  <div class="field">
+    <%= form.label :status %>
+    <%= form.text_field :status, id: :building_status %>
+  </div>
+
+  <div class="field">
+    <%= form.label :source %>
+    <%= form.text_field :source, id: :building_source %>
+  </div>
+
+  <div class="field">
+    <%= form.label :notes %>
+    <%= form.text_field :notes, id: :building_notes %>
+  </div>
+
+  <div class="field">
+    <%= form.label :gsv %>
+    <%= form.text_field :gsv, id: :building_gsv %>
+  </div>
+
+  <div class="field">
+    <%= form.label :key %>
+    <%= form.number_field :key, id: :building_key %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

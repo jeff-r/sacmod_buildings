@@ -1,0 +1,31 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  architect_id: 1
+  apn: MyString
+  year: MyString
+  address1: MyString
+  city: MyString
+  zip: MyString
+  family: MyString
+  type: 
+  status: MyString
+  source: MyString
+  notes: MyString
+  gsv: MyString
+  key: 1
+
+two:
+  architect_id: 1
+  apn: MyString
+  year: MyString
+  address1: MyString
+  city: MyString
+  zip: MyString
+  family: MyString
+  type: 
+  status: MyString
+  source: MyString
+  notes: MyString
+  gsv: MyString
+  key: 1
