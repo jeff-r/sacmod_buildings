@@ -72,7 +72,7 @@
 </ul>
 
 <p>
-<%= link_to 'Add photo', new_image_path(building_id: @building.id) %>
+<%= link_to 'Add photo', new_image_path(building_id: @building.id), data: { turbolinks: false } %>
 </p>
 
 <p>
