@@ -10,6 +10,12 @@
   <%= @architect.description %>
 </p>
 
+<ul>
+<% @architect.buildings.each do |building| %>
+  <li><%= link_to building.address1, building %></li>
+<% end %>
+</ul>
+
 <%= link_to 'Edit', edit_architect_path(@architect) %> |
 <%= link_to 'Back', architects_path %> |
 <%= link_to 'Destroy', @architect, method: :delete, data: { confirm: 'Are you sure?' } %>
