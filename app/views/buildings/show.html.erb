@@ -65,5 +65,8 @@
   <%= @building.key %>
 </p>
 
-<%= link_to 'Edit', edit_building_path(@building) %> |
-<%= link_to 'Back', buildings_path %>
+<%= link_to 'Edit building', edit_building_path(@building) %>
+
+<p>
+<%= link_to "Back to #{@building.architect.name}", @building.architect %>
+</p>
