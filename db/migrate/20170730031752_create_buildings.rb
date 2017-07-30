@@ -8,7 +8,7 @@ class CreateBuildings < ActiveRecord::Migration[5.1]
       t.string :city
       t.string :zip
       t.string :family
-      t.string :type
+      t.string :building_type
       t.string :status
       t.string :source
       t.string :notes

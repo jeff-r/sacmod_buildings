@@ -27,7 +27,7 @@ ActiveRecord::Schema.define(version: 20170730031752) do
     t.string "city"
     t.string "zip"
     t.string "family"
-    t.string "type"
+    t.string "building_type"
     t.string "status"
     t.string "source"
     t.string "notes"
