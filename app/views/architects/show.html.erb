@@ -14,7 +14,10 @@
 
 <ul>
 <% @architect.buildings.each do |building| %>
-  <li><%= link_to building.address1, building %></li>
+  <li>
+    <%= link_to building.address1, building %>
+    <%= first_thumbnail_tag(building) %>
+  </li>
 <% end %>
 </ul>
 

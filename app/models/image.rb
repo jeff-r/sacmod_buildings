@@ -7,4 +7,12 @@ class Image < ApplicationRecord
     "#{Rails.root}/public/uploads/images/"
   end
 
+  def path
+    filename
+  end
+
+  def thumb_path
+    return "" if filename.thumb.nil?
+    filename.thumb.url
+  end
 end

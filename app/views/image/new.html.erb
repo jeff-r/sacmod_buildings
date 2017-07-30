@@ -1,5 +1,6 @@
 <%= form_tag '/image', method: :post, class: "dropzone", id: "media-dropzone" do %>
   <input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>" />
+  <input name="building_id", type="hidden" value="<%= @building_id %>" />
   <div class="fallback">
     <%= file_field_tag "media", multiple: true%>
   </div>

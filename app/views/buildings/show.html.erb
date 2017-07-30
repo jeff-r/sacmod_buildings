@@ -65,8 +65,14 @@
   <%= @building.key %>
 </p>
 
+<ul>
+  <% @building.images.each do |image| %>
+    <img src="<%= image.path %>" />
+  <% end %>
+</ul>
+
 <p>
-<%= link_to 'Add photo', new_image_path %>
+<%= link_to 'Add photo', new_image_path(building_id: @building.id) %>
 </p>
 
 <p>
