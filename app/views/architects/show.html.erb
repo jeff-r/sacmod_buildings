@@ -1,21 +1,17 @@
 <p id="notice"><%= notice %></p>
 
-<%= link_to 'Back to architect list', architects_path %>
-
 <p>
-  <strong>Name:</strong>
-  <%= @architect.name %>
+<%= link_to '(Back to architect list)', architects_path %>
 </p>
 
 <p>
-  <strong>Description:</strong>
-  <%= @architect.description %>
+  <%= @architect.name %>
 </p>
 
 <ul>
 <% @architect.buildings.each do |building| %>
   <li>
-    <%= link_to building.address1, building %>
+    <%= link_to building.family, building %>
     <%= first_thumbnail_tag(building) %>
   </li>
 <% end %>
