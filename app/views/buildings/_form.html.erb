@@ -4,76 +4,119 @@
       <h2><%= pluralize(building.errors.count, "error") %> prohibited this building from being saved:</h2>
 
       <ul>
-      <% building.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
+        <% building.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
       </ul>
     </div>
   <% end %>
 
-  <div class="field">
-    <%= form.label :architect_id %>
-    <%= form.number_field :architect_id, id: :building_architect_id %>
+  <div class="field row">
+    <div class='col-sm-2'>
+      Architect
+    </div>
+    <div class='col-sm-10'>
+      <%= building.architect.name %>
+    </div>
   </div>
 
-  <div class="field">
-    <%= form.label :apn %>
-    <%= form.text_field :apn, id: :building_apn %>
+  <div class="field row">
+    <div class='col-sm-2'>
+      <%= form.label :apn %>
+    </div>
+    <div class='col-sm-10'>
+      <%= form.text_field :apn, id: :building_apn %>
+    </div>
   </div>
 
-  <div class="field">
-    <%= form.label :year %>
-    <%= form.text_field :year, id: :building_year %>
+  <div class="field row">
+    <div class='col-sm-2'>
+      <%= form.label :year %>
+    </div>
+    <div class='col-sm-10'>
+      <%= form.text_field :year, id: :building_year %>
+    </div>
   </div>
 
-  <div class="field">
-    <%= form.label :address1 %>
-    <%= form.text_field :address1, id: :building_address1 %>
+  <div class="field row">
+    <div class='col-sm-2'>
+      <%= form.label :address1 %>
+    </div>
+    <div class='col-sm-10'>
+      <%= form.text_field :address1, id: :building_address1 %>
+    </div>
   </div>
 
-  <div class="field">
-    <%= form.label :city %>
-    <%= form.text_field :city, id: :building_city %>
+  <div class="field row">
+    <div class='col-sm-2'>
+      <%= form.label :city %>
+    </div>
+    <div class='col-sm-10'>
+      <%= form.text_field :city, id: :building_city %>
+    </div>
   </div>
 
-  <div class="field">
-    <%= form.label :zip %>
-    <%= form.text_field :zip, id: :building_zip %>
+  <div class="field row">
+    <div class='col-sm-2'>
+      <%= form.label :zip %>
+    </div>
+    <div class='col-sm-10'>
+      <%= form.text_field :zip, id: :building_zip %>
+    </div>
   </div>
 
-  <div class="field">
-    <%= form.label :family %>
-    <%= form.text_field :family, id: :building_family %>
+  <div class="field row">
+    <div class='col-sm-2'>
+      <%= form.label :family %>
+    </div>
+    <div class='col-sm-10'>
+      <%= form.text_field :family, id: :building_family %>
+    </div>
   </div>
 
-  <div class="field">
-    <%= form.label :building_type %>
-    <%= form.text_field :building_type, id: :building_type %>
+  <div class="field row">
+    <div class='col-sm-2'>
+      <%= form.label :building_type %>
+    </div>
+    <div class='col-sm-10'>
+      <%= form.text_field :building_type, id: :building_type %>
+    </div>
   </div>
 
-  <div class="field">
-    <%= form.label :status %>
-    <%= form.text_field :status, id: :building_status %>
+  <div class="field row">
+    <div class='col-sm-2'>
+      <%= form.label :status %>
+    </div>
+    <div class='col-sm-10'>
+      <%= form.text_field :status, id: :building_status %>
+    </div>
   </div>
 
-  <div class="field">
-    <%= form.label :source %>
-    <%= form.text_field :source, id: :building_source %>
+  <div class="field row">
+    <div class='col-sm-2'>
+      <%= form.label :source %>
+    </div>
+    <div class='col-sm-10'>
+      <%= form.text_field :source, id: :building_source %>
+    </div>
   </div>
 
-  <div class="field">
-    <%= form.label :notes %>
-    <%= form.text_field :notes, id: :building_notes %>
+  <div class="field row">
+    <div class='col-sm-2'>
+      <%= form.label :gsv %>
+    </div>
+    <div class='col-sm-10'>
+      <%= form.text_field :gsv, id: :building_gsv %>
+    </div>
   </div>
 
-  <div class="field">
-    <%= form.label :gsv %>
-    <%= form.text_field :gsv, id: :building_gsv %>
-  </div>
-
-  <div class="field">
-    <%= form.label :key %>
-    <%= form.number_field :key, id: :building_key %>
+  <div class="field row">
+    <div class='col-sm-2'>
+      <%= form.label :notes %>
+    </div>
+    <div class='col-sm-10'>
+      <%= form.text_field :notes, id: :building_notes %>
+    </div>
   </div>
 
   <div class="actions">
