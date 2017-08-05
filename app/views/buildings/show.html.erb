@@ -8,7 +8,7 @@
 
 
 <div class='row'>
-  <div class='col-sm-6'>
+  <div class='col-sm-7'>
     <div class='building-architect row'>
       <div class='col-sm-10'>
         <%= @building.architect.name %>
@@ -17,9 +17,19 @@
         <%= @building.year %>
       </div>
     </div>
+
+
+    <div class='building-architect row'>
+      <div class='col-sm-10'>
+          <% @building.images.each do |image| %>
+            <img src="<%= image.path %>" class="building-image" />
+          <% end %>
+      </div>
+    </div>
+
   </div>
 
-  <div class='col-sm-6'>
+  <div class='col-sm-5'>
     <div class='row'>
       <div class='map col-sm-12'>
         Map goes here
@@ -76,12 +86,6 @@
   <strong>Google street view:</strong>
   <%= gsv_or_link @building.gsv %>
 </p>
-
-<ul>
-  <% @building.images.each do |image| %>
-    <img src="<%= image.path %>" />
-  <% end %>
-</ul>
 
 <p>
 <%= link_to 'Add photo', new_image_path(building_id: @building.id), data: { turbolinks: false } %>
