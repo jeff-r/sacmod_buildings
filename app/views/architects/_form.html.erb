@@ -11,14 +11,28 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= form.label :name %>
-    <%= form.text_field :name, id: :architect_name %>
+  <div class="field row">
+    <div class='col-sm-2'>
+      <%= form.label :name %>
+    </div>
+    <div class='col-sm-10'>
+      <%= form.text_field :name, id: :architect_name %>
+    </div>
+  </div>
+
+  <div class="field row">
+    <div class='col-sm-2'>
+      <%= form.label :description %>
+    </div>
+    <div class='col-sm-10'>
+      <%= form.text_area :description, id: :architect_description %>
+    </div>
   </div>
 
   <div class="field">
-    <%= form.label :description %>
-    <%= form.text_field :description, id: :architect_description %>
+  </div>
+
+  <div class="field">
   </div>
 
   <div class="actions">
