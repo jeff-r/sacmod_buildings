@@ -5,8 +5,7 @@ class ImageUploader < CarrierWave::Uploader::Base
   storage :file
 
   def store_dir
-    Image.uploaded_image_path
-    # "#{Rails.root}/public/uploads/images/"
+    "#{Rails.root}/public/uploads/images/buildings/#{model.building_id}"
   end
 
   # Provide a default URL as a default if there hasn't been a file uploaded:
