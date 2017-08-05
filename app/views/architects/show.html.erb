@@ -11,11 +11,12 @@
 <ul>
 <% @architect.buildings.each do |building| %>
   <li>
-    <%= link_to building.family, building %>
+    <%= link_to building.address, building %>
     <%= first_thumbnail_tag(building) %>
   </li>
 <% end %>
 </ul>
 
 <%= link_to "Edit '#{@architect.name}'", edit_architect_path(@architect) %> |
-<%= link_to "Destroy '#{@architect.name}'", @architect, method: :delete, data: { confirm: 'Are you sure?' } %>
+<%= link_to 'New Building', new_building_path(architect_id: @architect.id) %> |
+<%= link_to "Delete '#{@architect.name}'", @architect, method: :delete, data: { confirm: 'Are you sure?' } %>
