@@ -1,4 +1,6 @@
 class ImageController < ApplicationController
+  before_action :authenticate_user!
+
   def new
     @building_id = params[:building_id]
   end

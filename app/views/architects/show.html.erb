@@ -17,6 +17,8 @@
 <% end %>
 </ul>
 
-<%= link_to "Edit '#{@architect.name}'", edit_architect_path(@architect) %> |
-<%= link_to 'New Building', new_building_path(architect_id: @architect.id) %> |
-<%= link_to "Delete '#{@architect.name}'", @architect, method: :delete, data: { confirm: 'Are you sure?' } %>
+<% if user_signed_in? %>
+  <%= link_to "Edit '#{@architect.name}'", edit_architect_path(@architect) %> |
+  <%= link_to 'New Building', new_building_path(architect_id: @architect.id) %> |
+  <%= link_to "Delete '#{@architect.name}'", @architect, method: :delete, data: { confirm: 'Are you sure?' } %>
+<% end %>

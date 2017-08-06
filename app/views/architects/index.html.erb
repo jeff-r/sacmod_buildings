@@ -14,4 +14,6 @@
 
 <br>
 
-<%= link_to 'New Architect', new_architect_path %>
+<% if user_signed_in? %>
+  <%= link_to 'New Architect', new_architect_path %>
+<% end %>

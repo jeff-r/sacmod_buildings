@@ -85,14 +85,16 @@
   <%= gsv_or_link @building.gsv %>
 </p>
 
-<p>
-<%= link_to 'Add photo', new_image_path(building_id: @building.id), data: { turbolinks: false } %>
-</p>
+<% if user_signed_in? %>
+  <p>
+  <%= link_to 'Add photo', new_image_path(building_id: @building.id), data: { turbolinks: false } %>
+  </p>
 
-<p>
-<%= link_to 'Edit building', edit_building_path(@building) %>
-</p>
+  <p>
+  <%= link_to 'Edit building', edit_building_path(@building) %>
+  </p>
 
-<p>
-<%= link_to "Back to #{@building.architect.name}", @building.architect %>
-</p>
+  <p>
+  <%= link_to "Back to #{@building.architect.name}", @building.architect %>
+  </p>
+<% end %>
