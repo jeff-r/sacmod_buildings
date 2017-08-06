@@ -11,7 +11,7 @@ class BuildingsControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should get new" do
-    get new_building_url
+    get new_building_url, params: {architect_id: @building.architect.id}
     assert_response :success
   end
 
@@ -29,7 +29,7 @@ class BuildingsControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should get edit" do
-    get edit_building_url(@building)
+    get edit_building_url(@building, params: {architect_id: @building.architect_id})
     assert_response :success
   end
 
