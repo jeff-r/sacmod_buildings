@@ -41,6 +41,7 @@ class BuildingsController < ApplicationController
   # PATCH/PUT /buildings/1
   # PATCH/PUT /buildings/1.json
   def update
+    delete_images
     respond_to do |format|
       if @building.update(building_params)
         format.html { redirect_to @building, notice: 'Building was successfully updated.' }
@@ -62,7 +63,25 @@ class BuildingsController < ApplicationController
     end
   end
 
+  def delete_images
+    image_param_keys = params["building"].keys.select { |key| key.include? "remove_image_" }
+    image_param_keys.each do |key|
+      image_id = image_id_from_param_key key
+      if params["building"][key] == "1"
+        image = Image.find image_id
+        image.remove_filename!
+        image.destroy
+      end
+    end
+  end
+
   private
+
+  def image_id_from_param_key(key)
+    matches = /remove_image_(\d+)/.match(key)
+    matches[1]
+  end
+
     # Use callbacks to share common setup or constraints between actions.
     def set_building
       @building = Building.find(params[:id])
@@ -70,6 +89,6 @@ class BuildingsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def building_params
-      params.require(:building_id).permit(:architect_id, :apn, :year, :address1, :city, :zip, :family, :type, :status, :source, :notes, :gsv, :key)
+      params.permit(:architect_id, :apn, :year, :address1, :building_id, :city, :zip, :family, :type, :status, :source, :notes, :gsv, :key)
     end
 end

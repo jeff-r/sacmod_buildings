@@ -17,7 +17,7 @@ class BuildingsControllerTest < ActionDispatch::IntegrationTest
 
   test "should create building" do
     assert_difference('Building.count') do
-      post buildings_url, params: { building: { address1: @building.address1, apn: @building.apn, architect_id: @building.architect_id, city: @building.city, family: @building.family, gsv: @building.gsv, key: @building.key, notes: @building.notes, source: @building.source, status: @building.status, type: @building.type, year: @building.year, zip: @building.zip } }
+      post buildings_url, params: { building: { address1: @building.address1, apn: @building.apn, architect_id: @building.architect_id, city: @building.city, family: @building.family, gsv: @building.gsv, key: @building.key, notes: @building.notes, source: @building.source, status: @building.status, building_type: @building.building_type, year: @building.year, zip: @building.zip } }
     end
 
     assert_redirected_to building_url(Building.last)
@@ -34,7 +34,7 @@ class BuildingsControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should update building" do
-    patch building_url(@building), params: { building: { address1: @building.address1, apn: @building.apn, architect_id: @building.architect_id, city: @building.city, family: @building.family, gsv: @building.gsv, key: @building.key, notes: @building.notes, source: @building.source, status: @building.status, type: @building.type, year: @building.year, zip: @building.zip } }
+    patch building_url(@building), params: { building: { address1: @building.address1, apn: @building.apn, architect_id: @building.architect_id, city: @building.city, family: @building.family, gsv: @building.gsv, key: @building.key, notes: @building.notes, source: @building.source, status: @building.status, buildingbuilding_type: @building.building_type, year: @building.year, zip: @building.zip } }
     assert_redirected_to building_url(@building)
   end
 

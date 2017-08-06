@@ -119,6 +119,20 @@
     </div>
   </div>
 
+  <div class="field row">
+    <div class='col-sm-2'>
+      Delete Images
+    </div>
+    <div class="col-sm-10">
+      <% @building.images.each do |image| %>
+        <div>
+          <%= form.check_box "remove_image_#{image.id}" %>
+          <img src="<%= image.path %>" class="building-image half-size" />
+        </div>
+      <% end %>
+    </div>
+  </div>
+
   <div class="actions">
     <%= form.submit %>
   </div>

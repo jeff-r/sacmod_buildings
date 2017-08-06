@@ -50,8 +50,17 @@
   width: 500px;
 }
 
+.field.row input[type='checkbox'] {
+  width: 50px;
+}
+
 .field.row textarea {
   width: 500px;
+}
+
+.half-size {
+  height: 50%;
+  width:  50%;
 }
 
 h1 {
@@ -60,4 +69,8 @@ h1 {
   font-family: serif;
   margin-top: 20px;
   margin-bottom: 20px;
+}
+
+.bottom-nav-links {
+  margin-top: 15px;
 }
