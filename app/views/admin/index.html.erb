@@ -1,0 +1,29 @@
+<p>
+All users:
+</p>
+
+<div class='row admin-user-list'>
+  <div class='col-sm-2'>
+    Email address
+  </div>
+  <div class='col-sm-10'>
+    Approved?
+  </div>
+</div>
+
+<%= form_tag(method: :patch) do %>
+<% @users.each do |user| %>
+
+  <div class='row admin-user-list'>
+    <div class='col-sm-2'>
+      <%= user.email %>
+    </div>
+    <div class='col-sm-10'>
+      <%= hidden_field_tag "seen_users[]", user.id %>
+      <%= check_box_tag "approved_users[]", user.id, user.approved %>
+    </div>
+  </div>
+
+<% end %>
+<%= submit_tag %>
+<% end %>
