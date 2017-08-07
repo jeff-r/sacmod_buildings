@@ -94,7 +94,8 @@
   <%= link_to 'Edit building', edit_building_path(@building) %>
   </p>
 
-  <p>
-  <%= link_to "Back to #{@building.architect.name}", @building.architect %>
-  </p>
 <% end %>
+
+<p>
+<%= link_to "Back to #{@building.architect.name}", @building.architect %>
+</p>
