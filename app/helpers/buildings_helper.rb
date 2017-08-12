@@ -13,7 +13,7 @@ module BuildingsHelper
   def google_embedded_map_via_coords(building)
     iframe = <<-IFRAME
      <iframe width="390" height="330" frameborder="0" style="border:0"
-      src="https://www.google.com/maps/embed/v1/place?key=#{ENV['GOOGLE_MAP_API_KEY']}&q=#{building.map_center}"
+      src="https://www.google.com/maps/embed/v1/place?key=#{api_key}&q=#{building.map_center}"
       allowfullscreen>
      </iframe>
     IFRAME
@@ -44,5 +44,17 @@ module BuildingsHelper
     else
       google_static_map(building)
     end
+  end
+
+  def api_key
+    ENV['GOOGLE_MAP_API_KEY']
+  end
+
+  def google_street_view_url(building)
+    "https://maps.googleapis.com/maps/api/streetview?size=390x330&location=#{building.address}&key=#{api_key}".html_safe
+  end
+
+  def google_street_view_tag(building)
+    image_tag google_street_view_url(building)
   end
 end
