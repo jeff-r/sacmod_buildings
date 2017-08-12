@@ -31,10 +31,10 @@ module BuildingsHelper
   end
 
   def embedded_map_tag(building)
-    if building.needs_geocoding?
+    if building.has_address?
       google_embedded_map(building)
     else
-      google_embedded_map_via_coords(building)
+      "This building needs an address".html_safe
     end
   end
 

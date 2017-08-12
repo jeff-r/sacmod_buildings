@@ -11,7 +11,7 @@
   <div class='col-sm-7'>
     <div class='building-architect row'>
       <div class='col-sm-10'>
-        <%= @building.architect.name %>
+        <%= link_to @building.architect.name, @building.architect %>
       </div>
       <div class='col-sm-2'>
         <%= @building.year %>
@@ -95,7 +95,3 @@
   </p>
 
 <% end %>
-
-<p>
-<%= link_to "Back to #{@building.architect.name}", @building.architect %>
-</p>

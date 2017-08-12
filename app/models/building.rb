@@ -15,4 +15,8 @@ class Building < ApplicationRecord
   def map_center
     [latitude, longitude].join(',')
   end
+
+  def has_address?
+    !(address1.empty? || city.empty? || zip.empty?)
+  end
 end
