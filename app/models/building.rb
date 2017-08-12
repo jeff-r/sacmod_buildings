@@ -21,10 +21,10 @@ class Building < ApplicationRecord
   end
 
   def prev
-    architect.buildings.where("id < ?", id).first || architect.buildings.last
+    architect.buildings.where("id < ?", id).order("id desc").first || architect.buildings.last
   end
 
   def next
-    architect.buildings.where("id > ?", id).first || architect.buildings.first
+    architect.buildings.where("id > ?", id).order("id asc").first || architect.buildings.first
   end
 end
