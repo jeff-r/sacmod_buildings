@@ -11,4 +11,8 @@ class Building < ApplicationRecord
   def needs_geocoding?
     latitude.nil? || longitude.nil?
   end
+
+  def map_center
+    [latitude, longitude].join(',')
+  end
 end
