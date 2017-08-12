@@ -1,8 +1,17 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-<%= link_to '(Back to architect list)', architects_path %>
+<%= link_to 'Back to architect list', architects_path %>
 </p>
+
+<div class='row'>
+  <div class='col-sm-6'>
+    <%= prev_architect_link @architect %>
+  </div>
+  <div class='col-sm-6 text-right'>
+    <%= next_architect_link @architect %>
+  </div>
+</div>
 
 <p>
   <%= @architect.name %>
