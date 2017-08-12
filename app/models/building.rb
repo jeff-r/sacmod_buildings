@@ -7,4 +7,8 @@ class Building < ApplicationRecord
   def address
     "#{address1}, #{city} #{zip}"
   end
+
+  def needs_geocoding?
+    latitude.nil? || longitude.nil?
+  end
 end
