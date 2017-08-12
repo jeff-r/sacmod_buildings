@@ -5,7 +5,7 @@ class ArchitectsController < ApplicationController
   # GET /architects
   # GET /architects.json
   def index
-    @architects = Architect.all
+    @architects = Architect.all.order("name asc")
   end
 
   # GET /architects/1
