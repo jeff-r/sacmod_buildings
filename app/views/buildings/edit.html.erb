@@ -3,7 +3,7 @@
 <%= render 'form', building: @building %>
 
 <div class='bottom-nav-links'>
-  <%= link_to 'Add photo', image_index_path %>
+  <%= link_to 'Add photo', image_index_path %> |
   <%= link_to 'Show', @building %> |
   <%= link_to "Back to #{@building.architect.name}", architect_path(@building.architect) %>
 </div>
