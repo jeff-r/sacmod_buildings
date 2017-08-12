@@ -81,11 +81,6 @@
   <%= @building.building_type %>
 </p>
 
-<p>
-  <strong>Google street view:</strong>
-  <%= gsv_or_link @building.gsv %>
-</p>
-
 <% if user_signed_in? %>
   <p>
   <%= link_to 'Add photo', new_image_path(building_id: @building.id), data: { turbolinks: false } %> |
