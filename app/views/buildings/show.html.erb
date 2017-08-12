@@ -1,6 +1,15 @@
 <p id="notice"><%= notice %></p>
 
 <div class='row'>
+  <div class='col-sm-6'>
+    <%= prev_building_link @building %>
+  </div>
+  <div class='col-sm-6 text-right'>
+    <%= next_building_link @building %>
+  </div>
+</div>
+
+<div class='row'>
   <div class='building-title'>
     <%= @building.family %>
   </div>

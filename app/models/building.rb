@@ -19,4 +19,12 @@ class Building < ApplicationRecord
   def has_address?
     !(address1.empty? || city.empty? || zip.empty?)
   end
+
+  def prev
+    architect.buildings.where("id < ?", id).first || architect.buildings.last
+  end
+
+  def next
+    architect.buildings.where("id > ?", id).first || architect.buildings.first
+  end
 end

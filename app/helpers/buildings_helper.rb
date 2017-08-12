@@ -1,4 +1,12 @@
 module BuildingsHelper
+  def next_building_link(building)
+    link_to "next", building.next
+  end
+
+  def prev_building_link(building)
+    link_to "previous", building.prev
+  end
+
   def google_static_map(center)
     image_tag "https://maps.googleapis.com/maps/api/staticmap?center=#{center}&size=300x300&zoom=17&markers=#{center}"
   end
