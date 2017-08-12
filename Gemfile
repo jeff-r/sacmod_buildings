@@ -21,6 +21,7 @@ gem 'dropzonejs-rails'
 gem 'carrierwave'
 gem 'mini_magick'
 gem 'pg'
+gem 'geocoder'
 
 group :development, :test do
   gem 'sqlite3'
