@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'search/multisearch'
+
   resources :buildings
   resources :architects
   devise_for :users

@@ -3,6 +3,8 @@ class Building < ApplicationRecord
   has_many :images
   # geocoded_by :address
   # after_validation :geocode
+  include PgSearch
+  multisearchable against: [:address1, :apn, :family, :notes]
 
   def address
     "#{address1}, #{city} #{zip}"

@@ -1,0 +1,30 @@
+<p>
+<%= link_to 'Back to architect list', architects_path %>
+</p>
+
+<% if @search_results.empty? %>
+    <div class='row'>
+      <div class='col-sm-12'>
+        No search results. Sorry!
+      </div>
+    </div>
+<% else %>
+    <div class='row'>
+      <div class='col-sm-1'>
+        Type
+      </div>
+      <div class='col-sm-11'>
+        Result
+      </div>
+    </div>
+  <% @search_results.each do |result| %>
+    <div class='row'>
+      <div class='col-sm-1'>
+        <%= result.searchable_type %>
+      </div>
+      <div class='col-sm-11'>
+        <%= multisearch_link_tag result %>
+      </div>
+    </div>
+  <% end %>
+<% end %>

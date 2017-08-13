@@ -1,5 +1,7 @@
 class Architect < ApplicationRecord
   has_many :buildings
+  include PgSearch
+  multisearchable against: [:name, :description]
 
   def prev
     Architect.where("id < ?", id).order("id desc").first || Architect.last
