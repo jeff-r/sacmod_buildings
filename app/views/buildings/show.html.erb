@@ -92,7 +92,6 @@
 
 <% if user_signed_in? %>
   <p>
-  <%= link_to 'Add photo', new_image_path(building_id: @building.id), data: { turbolinks: false } %> |
   <%= link_to 'Edit building', edit_building_path(@building) %>
   </p>
 <% end %>
