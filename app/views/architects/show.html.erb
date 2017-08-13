@@ -12,9 +12,11 @@
   </div>
 </div>
 
-<p>
-  <%= @architect.name %>
-</p>
+<div class='row'>
+  <div class='col-sm-12 building-title'>
+    <%= @architect.name %>
+  </div>
+</div>
 
 <ul>
 <% @architect.buildings.each do |building| %>
