@@ -1,0 +1,27 @@
+version: '2'
+services:
+  library:
+    depends_on:
+      - db
+    volumes:
+      # On Fedora, if you get permission errors, it might be an SELinux error.
+      # If so, you can disable SELinux for now:
+      #  su -c "setenforce 0"
+      - "./:/home/sacmod/library"
+    build:
+      context: ./
+      dockerfile: ./Dockerfile
+      args:
+        buildno: 1
+    links:
+      - db:postgresql.dev
+    environment:
+      - POSTGRES_PASSWORD=password1
+      - POSTGRES_USER=sacmod
+    ports:
+      - 3000:3000
+  db:
+    image: postgres
+    environment:
+      - POSTGRES_PASSWORD=password1
+      - POSTGRES_USER=sacmod

@@ -22,6 +22,7 @@ gem 'carrierwave'
 gem 'mini_magick'
 gem 'pg'
 gem 'geocoder'
+gem 'pg_search'
 
 group :development, :test do
   gem 'sqlite3'
@@ -29,6 +30,7 @@ group :development, :test do
   gem 'pry-byebug'
   gem 'capybara', '~> 2.13'
   gem 'selenium-webdriver'
+  gem 'tzinfo-data'
 end
 
 group :development do

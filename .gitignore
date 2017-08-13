@@ -25,3 +25,4 @@
 *.csv
 public/uploads/
 .env
+bundler
