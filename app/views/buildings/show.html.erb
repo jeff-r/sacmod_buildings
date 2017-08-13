@@ -30,9 +30,13 @@
 
     <div class='building-architect row'>
       <div class='col-sm-10'>
+        <% if @building.images.empty? %>
+          <%= google_street_view_tag(@building) %>
+        <% else %>
           <% @building.images.each do |image| %>
             <img src="<%= image.path %>" class="building-image" />
           <% end %>
+        <% end %>
       </div>
     </div>
 
@@ -41,7 +45,9 @@
   <div class='col-sm-5'>
     <div class='row'>
       <div class='map'>
-        <%= google_street_view_tag(@building) %>
+        <% if !@building.images.empty? %>
+          <%= google_street_view_tag(@building) %>
+        <% end %>
         <%= embedded_map_tag(@building) %>
       </div>
     </div>
