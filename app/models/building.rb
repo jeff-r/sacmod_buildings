@@ -19,7 +19,7 @@ class Building < ApplicationRecord
   end
 
   def has_address?
-    !(address1.empty? || city.empty? || zip.empty?)
+    !(address1&.empty? || city&.empty? || zip&.empty?)
   end
 
   def prev
