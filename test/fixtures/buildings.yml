@@ -2,30 +2,30 @@
 
 one:
   architect: one
-  apn: MyString
-  year: MyString
-  address1: MyString
-  city: MyString
-  zip: MyString
-  family: MyString
-  building_type: 
-  status: MyString
-  source: MyString
-  notes: MyString
-  gsv: MyString
+  apn: apn one
+  year: 2016
+  address1: 1234 5th street
+  city: city 1
+  zip: 11111
+  family: family 1
+  building_type: type 1
+  status: status 1
+  source: source 1
+  notes: notes 1
+  gsv: gsv 1
   key: 1
 
 two:
   architect: two
-  apn: MyString
-  year: MyString
-  address1: MyString
-  city: MyString
-  zip: MyString
-  family: MyString
-  building_type: 
-  status: MyString
-  source: MyString
-  notes: MyString
-  gsv: MyString
+  apn: apn two
+  year: 2017
+  address1: 2345 6th street
+  city: city 2
+  zip: 22222
+  family: family 2
+  building_type: type 2
+  status: status 2
+  source: source 2
+  notes: notes 2
+  gsv: gsv 2
   key: 2
