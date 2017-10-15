@@ -1,8 +1,11 @@
 require 'test_helper'
 
 class ArchitectsControllerTest < ActionDispatch::IntegrationTest
+  include Devise::Test::IntegrationHelpers
+
   setup do
     @architect = architects(:one)
+    sign_in users(:one)
   end
 
   test "should get index" do
