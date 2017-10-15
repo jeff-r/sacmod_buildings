@@ -23,6 +23,8 @@ gem 'mini_magick'
 gem 'pg'
 gem 'geocoder'
 gem 'pg_search'
+gem 'rack-cors'
+gem 'active_model_serializers'
 
 group :development, :test do
   gem 'sqlite3'

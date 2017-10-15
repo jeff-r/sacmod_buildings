@@ -6,6 +6,10 @@ class ArchitectsController < ApplicationController
   # GET /architects.json
   def index
     @architects = Architect.all.order("name asc")
+    respond_to do |format|
+      format.html { render :index }
+      format.json { render json: @architects, each_serializer: Architects::IndexSerializer }
+    end
   end
 
   # GET /architects/1
