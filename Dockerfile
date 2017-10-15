@@ -20,7 +20,7 @@ COPY docker/bashrc /home/sacmod/.bashrc
 COPY . /home/sacmod/library
 
 WORKDIR /home/sacmod/library
-# RUN /bin/bash -lc 'bundle --path /home/sacmod/.bundler/'
+RUN /bin/bash -lc 'bundle --path /home/sacmod/.bundler/'
 
 EXPOSE 3000
 CMD while true; do sleep 1; done
