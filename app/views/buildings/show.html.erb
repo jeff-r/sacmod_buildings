@@ -1,5 +1,9 @@
 <p id="notice"><%= notice %></p>
 
+<% if showing_older_version? %>
+  <p id="notify_previous_version">Showing a previous version</p>
+<% end %>
+
 <div class='row prev-next'>
   <div class='col-sm-6'>
     <%= prev_building_link @building %>
@@ -96,6 +100,7 @@
 
 <% if user_signed_in? %>
   <p>
-  <%= link_to 'Edit building', edit_building_path(@building) %>
+  <%= link_to 'Edit building', edit_building_path(@building) %><br>
+  <%= building_versions_link(@building) %>
   </p>
 <% end %>

@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   resources :image
 
   get 'search/multisearch'
+  get 'buildings/:id/versions', to: 'buildings#show_versions', as: 'building_versions'
   get "/users/admin" => "admin#index"
   post "/users/admin" => "admin#update"
 

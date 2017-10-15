@@ -58,4 +58,15 @@ module BuildingsHelper
   def google_street_view_tag(building)
     image_tag google_street_view_url(building)
   end
+
+  def building_versions_link(building)
+    versions = building.versions
+    if versions.count > 0
+      link_to 'Show versions', building_versions_path(building)
+    end
+  end
+
+  def showing_older_version?(version_id = @version_id)
+    !!version_id
+  end
 end

@@ -1,0 +1,31 @@
+<p id="notice"><%= notice %></p>
+
+<div class='building-architect row'>
+  <div class='col-sm-12'>
+    <%= link_to @building.architect.name, @building.architect %>, <%= @building.year %>
+  </div>
+</div>
+
+<div class='building-architect row'>
+  <div class='col-sm-12'>
+    <% @building.versions.each do |version| %>
+      <div class='row'>
+      <div class='col-sm-2'>
+        <%= version.paper_trail_originator %>
+        <%= version.whodunnit %>
+      </div>
+      <div class='col-sm-2'>
+        <%= version.event %>
+      </div>
+      </div>
+    <% end %>
+  </div>
+</div>
+
+
+<% if user_signed_in? %>
+  <p>
+  <%= link_to 'Edit building', edit_building_path(@building) %><br>
+  <%= link_to 'Back to building', building_path(@building) %>
+  </p>
+<% end %>

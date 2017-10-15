@@ -1,6 +1,8 @@
 class Building < ApplicationRecord
+  has_paper_trail
   belongs_to :architect
   has_many :images
+
   # geocoded_by :address
   # after_validation :geocode
   include PgSearch

@@ -1,5 +1,5 @@
 class BuildingsController < ApplicationController
-  before_action :set_building, only: [:show, :edit, :update, :destroy]
+  before_action :set_building, only: [:show, :edit, :update, :destroy, :show_versions]
   before_action :authenticate_user!, except: [:index, :show]
 
   # GET /buildings
@@ -11,6 +11,16 @@ class BuildingsController < ApplicationController
   # GET /buildings/1
   # GET /buildings/1.json
   def show
+    if params[:version]
+      @version_id = params[:version]
+      @building = PaperTrail::Version.find(@version_id).reify
+    end
+  end
+
+  def show_versions
+  end
+
+  def show_versions
   end
 
   # GET /buildings/new
