@@ -1,5 +1,5 @@
 class Architect < ApplicationRecord
-  has_many :buildings
+  has_many :buildings, -> { order :address1 }
   include PgSearch
   multisearchable against: [:name, :description]
 
