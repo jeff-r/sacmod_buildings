@@ -57,7 +57,7 @@ module BuildingsHelper
 
   def google_street_view_tag(building)
     if building.gsv
-      %{<img src="#{building.gsv}" />}
+      %{<img src="#{building.gsv}" />}.html_safe
     else
       image_tag google_street_view_url(building)
     end
