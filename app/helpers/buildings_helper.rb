@@ -52,11 +52,15 @@ module BuildingsHelper
   end
 
   def google_street_view_url(building)
-    "https://maps.googleapis.com/maps/api/streetview?size=390x330&location=#{building.address}&key=#{api_key}".html_safe
+      "https://maps.googleapis.com/maps/api/streetview?size=390x330&location=#{building.address}&key=#{api_key}".html_safe
   end
 
   def google_street_view_tag(building)
-    image_tag google_street_view_url(building)
+    if building.gsv
+      %{<img src="#{building.gsv}" />}
+    else
+      image_tag google_street_view_url(building)
+    end
   end
 
   def building_versions_link(building)
