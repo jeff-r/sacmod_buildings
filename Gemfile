@@ -26,6 +26,7 @@ gem 'pg_search'
 gem 'rack-cors'
 gem 'active_model_serializers'
 gem 'paper_trail'
+gem 'redcarpet'
 
 group :development, :test do
   gem 'sqlite3'
@@ -45,4 +46,5 @@ end
 
 group :test do
   gem "rspec-rails"
+  gem "rails-controller-testing"
 end

@@ -18,14 +18,30 @@
   </div>
 </div>
 
-<ul>
-<% @architect.buildings.each do |building| %>
-  <li>
-    <%= link_to building.address, building %>
-    <%= first_thumbnail_tag(building) %>
-  </li>
-<% end %>
-</ul>
+<div class='row'>
+  <div class='col-sm-12 architect-description'>
+    <%= @description.html_safe %>
+  </div>
+</div>
+
+<div class='row'>
+  <div class='col-sm-12'>
+    Buildings:
+  </div>
+</div>
+
+<div class='row'>
+  <div class='col-sm-12'>
+    <ul>
+      <% @architect.buildings.each do |building| %>
+        <li>
+          <%= link_to building.address, building %>
+          <%= first_thumbnail_tag(building) %>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+</div>
 
 <% if user_signed_in? %>
   <%= link_to "Edit '#{@architect.name}'", edit_architect_path(@architect) %> |

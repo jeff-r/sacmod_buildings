@@ -7,7 +7,7 @@ services:
       # On Fedora, if you get permission errors, it might be an SELinux error.
       # If so, you can disable SELinux for now:
       #  su -c "setenforce 0"
-      - "./:/home/sacmod/library:z"
+      - "./:/home/sacmod/library"
     build:
       context: ./
       dockerfile: ./Dockerfile
@@ -27,3 +27,5 @@ services:
       - POSTGRES_USER=sacmod
     ports:
       - 5432:5432
+    volumes:
+      - "./data:/home/sacmod/data"
