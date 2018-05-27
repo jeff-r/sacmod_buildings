@@ -1,0 +1,46 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  architect: one
+  apn: apn one
+  year: 2016
+  address1: 1234 5th street
+  city: city 1
+  zip: 11111
+  family: family 1
+  building_type: type 1
+  status: status 1
+  source: source 1
+  notes: notes 1
+  gsv: gsv 1
+  key: 1
+
+three:
+  architect: one
+  apn: apn three
+  year: 2016
+  address1: 1234 6th street
+  city: city 1
+  zip: 11111
+  family: family 1
+  building_type: type 1
+  status: status 1
+  source: source 1
+  notes: notes 1
+  gsv: gsv 1
+  key: 1
+
+two:
+  architect: two
+  apn: apn two
+  year: 2017
+  address1: 2345 6th street
+  city: city 2
+  zip: 22222
+  family: family 2
+  building_type: type 2
+  status: status 2
+  source: source 2
+  notes: notes 2
+  gsv: gsv 2
+  key: 2
