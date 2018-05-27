@@ -1,3 +1,5 @@
+require "redcarpet"
+
 class ArchitectsController < ApplicationController
   before_action :set_architect, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_user!, except: [:index, :show]
@@ -15,6 +17,9 @@ class ArchitectsController < ApplicationController
   # GET /architects/1
   # GET /architects/1.json
   def show
+    renderer = Redcarpet::Render::HTML.new(filter_html: true)
+    markdown = Redcarpet::Markdown.new(renderer)
+    @description = markdown.render(@architect.description)
   end
 
   # GET /architects/new

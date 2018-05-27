@@ -180,6 +180,7 @@ GEM
     rb-fsevent (0.10.3)
     rb-inotify (0.9.10)
       ffi (>= 0.5.0, < 2)
+    redcarpet (3.4.0)
     request_store (1.4.1)
       rack (>= 1.4)
     responders (2.4.0)
@@ -281,6 +282,7 @@ DEPENDENCIES
   rack-cors
   rails (~> 5.1.2)
   rails-controller-testing
+  redcarpet
   rspec-rails
   sass-rails (~> 5.0)
   selenium-webdriver
