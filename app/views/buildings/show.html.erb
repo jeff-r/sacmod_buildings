@@ -36,7 +36,7 @@
           <%= google_street_view_tag(@building) %>
         <% else %>
           <% @building.images.each do |image| %>
-            <img src="<%= image.path %>" class="building-image" />
+            <img src="<%= image.path_for_size(500) %>" class="building-image" />
           <% end %>
         <% end %>
       </div>
