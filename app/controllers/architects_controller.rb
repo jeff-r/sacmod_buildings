@@ -17,9 +17,13 @@ class ArchitectsController < ApplicationController
   # GET /architects/1
   # GET /architects/1.json
   def show
-    renderer = Redcarpet::Render::HTML.new(filter_html: true)
-    markdown = Redcarpet::Markdown.new(renderer)
-    @description = markdown.render(@architect.description)
+    if @architect.description.nil?
+      @description = ""
+    else
+      renderer = Redcarpet::Render::HTML.new(filter_html: true)
+      markdown = Redcarpet::Markdown.new(renderer)
+      @description = markdown.render(@architect.description)
+    end
   end
 
   # GET /architects/new
