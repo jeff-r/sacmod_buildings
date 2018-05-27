@@ -27,6 +27,7 @@ gem 'rack-cors'
 gem 'active_model_serializers'
 gem 'paper_trail'
 gem 'redcarpet'
+gem 'awesome_print'
 
 group :development, :test do
   gem 'sqlite3'
@@ -42,6 +43,8 @@ group :development do
   gem 'listen', '>= 3.0.5', '< 3.2'
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
+  gem 'pry-rails'
+  gem 'pry-byebug'
 end
 
 group :test do
