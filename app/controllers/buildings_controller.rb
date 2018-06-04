@@ -1,3 +1,5 @@
+require "redcarpet"
+
 class BuildingsController < ApplicationController
   before_action :set_building, only: [:show, :edit, :update, :destroy, :show_versions]
   before_action :authenticate_user!, except: [:index, :show]
@@ -15,6 +17,10 @@ class BuildingsController < ApplicationController
       @version_id = params[:version]
       @building = PaperTrail::Version.find(@version_id).reify
     end
+
+    renderer = Redcarpet::Render::HTML.new(filter_html: true)
+    markdown = Redcarpet::Markdown.new(renderer)
+    @description = markdown.render(@building.description)
   end
 
   def show_versions
@@ -100,6 +106,6 @@ class BuildingsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def building_params
-      params.require(:building).permit(:architect_id, :apn, :year, :address1, :building_type, :building_id, :city, :zip, :family, :type, :status, :source, :notes, :gsv, :key)
+      params.require(:building).permit(:architect_id, :apn, :year, :address1, :building_type, :building_id, :city, :zip, :family, :type, :status, :source, :notes, :gsv, :key, :description)
     end
 end
