@@ -28,13 +28,13 @@
     <div class='navbar'>
       <div class="container">
         <div class='row'>
-          <div class='col-sm-8'>
+          <div class='col-sm-6'>
             <a href='http://sacmod.org'>Sacmod</a>
             <a href='/'>Library</a>
             <%= link_to("Admin", "/users/admin") if current_user %>
           </div>
           <% if user_signed_in? %>
-            <div class='col-sm-4'>
+            <div class='col-sm-6 profile-links'>
               <%= link_to "Log out", destroy_user_session_path, method: :delete %>
               <%= link_to "Change password", edit_user_registration_path %>
             </div>
