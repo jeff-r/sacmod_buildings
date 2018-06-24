@@ -1,3 +1,3 @@
 # README
 
-Sacmod historic buildings database
+Sacmod historic buildings database.
