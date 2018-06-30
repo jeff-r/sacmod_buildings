@@ -20,7 +20,7 @@ class BuildingsController < ApplicationController
 
     renderer = Redcarpet::Render::HTML.new(filter_html: true)
     markdown = Redcarpet::Markdown.new(renderer)
-    @description = markdown.render(@building.description)
+    @description = markdown.render(@building.description).html_safe if @building.description
   end
 
   def show_versions
